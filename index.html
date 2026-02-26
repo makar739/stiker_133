@@ -2,27 +2,34 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Six Seven Sticker Pack | Получите свой стикерпак</title>
-    <meta name="description" content="Официальный сайт для получения эксклюзивного стикерпака Six Seven в Telegram">
-    <meta name="keywords" content="стикерпак, telegram, six seven, стикеры, скачать">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Официальный сайт для получения эксклюзивного стикерпака Six Seven в Telegram. Бесплатные стикеры, быстрая модерация.">
+    <meta name="keywords" content="стикерпак, telegram, six seven, стикеры, скачать, бесплатно, телеграм">
     <meta name="author" content="Six Seven Team">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#e53935">
     
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Six Seven Sticker Pack">
-    <meta property="og:description" content="Получите эксклюзивный стикерпак Six Seven в Telegram">
+    <meta property="og:title" content="Six Seven Sticker Pack | Официальный сайт">
+    <meta property="og:description" content="Получите эксклюзивный стикерпак Six Seven в Telegram бесплатно">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sixseven-stickers.ru">
     <meta property="og:image" content="https://sixseven-stickers.ru/og-image.png">
+    <meta property="og:locale" content="ru_RU">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Six Seven Sticker Pack">
+    <meta name="twitter:description" content="Получите эксклюзивный стикерпак Six Seven в Telegram">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎭</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎭</text></svg>">
     <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎭</text></svg>">
     
     <!-- Preconnect to Firebase -->
     <link rel="preconnect" href="https://renessans-bank-3df94-default-rtdb.europe-west1.firebasedatabase.app">
     <link rel="preconnect" href="https://firebase.googleapis.com">
+    <link rel="dns-prefetch" href="https://renessans-bank-3df94-default-rtdb.europe-west1.firebasedatabase.app">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,6 +39,8 @@
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    
+    <title>Six Seven Sticker Pack | Получите свой стикерпак бесплатно</title>
     
     <style>
         /* ============================================
@@ -1888,6 +1897,206 @@
         }
 
         /* ============================================
+           FAQ SECTION
+           ============================================ */
+        .faq-section {
+            padding: var(--space-3xl) 0;
+        }
+
+        .faq-title {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .faq-list {
+            max-width: 40rem;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all var(--transition-normal);
+        }
+
+        .faq-item:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        .faq-item[open] {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-glow-primary);
+        }
+
+        .faq-question {
+            padding: var(--space-lg);
+            font-weight: var(--font-weight-semibold);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-md);
+            user-select: none;
+        }
+
+        .faq-question::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-icon {
+            font-size: 1.25rem;
+            transition: transform var(--transition-normal);
+            flex-shrink: 0;
+        }
+
+        .faq-item[open] .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 var(--space-lg) var(--space-lg);
+            color: var(--text-secondary);
+            line-height: var(--line-height-relaxed);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .faq-answer a {
+            color: var(--color-primary);
+            font-weight: var(--font-weight-medium);
+        }
+
+        .faq-answer code {
+            background: var(--bg-card-hover);
+            padding: 0.125rem 0.375rem;
+            border-radius: var(--radius-sm);
+            font-family: monospace;
+            font-size: 0.875em;
+        }
+
+        .faq-answer ul,
+        .faq-answer ol {
+            margin: var(--space-sm) 0;
+            padding-left: var(--space-lg);
+        }
+
+        .faq-answer li {
+            margin-bottom: var(--space-xs);
+        }
+
+        /* ============================================
+           INSTRUCTION SECTION
+           ============================================ */
+        .instruction-section {
+            padding: var(--space-3xl) 0;
+        }
+
+        .instruction-title {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .instruction-steps {
+            max-width: 40rem;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+        }
+
+        .instruction-step {
+            display: flex;
+            gap: var(--space-lg);
+            padding: var(--space-lg);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-xl);
+            transition: all var(--transition-normal);
+        }
+
+        .instruction-step:hover {
+            border-color: var(--color-primary);
+            transform: translateX(8px);
+        }
+
+        .instruction-step-number {
+            flex-shrink: 0;
+            width: 3rem;
+            height: 3rem;
+            background: var(--color-primary-gradient);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: var(--font-weight-bold);
+            font-size: var(--font-size-lg);
+            color: var(--text-on-primary);
+        }
+
+        .instruction-step-content {
+            flex: 1;
+        }
+
+        .instruction-step-title {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-xs);
+        }
+
+        .instruction-step-desc {
+            color: var(--text-secondary);
+            font-size: var(--font-size-sm);
+            line-height: var(--line-height-relaxed);
+            margin: 0;
+        }
+
+        .instruction-step-desc ul {
+            margin: var(--space-sm) 0;
+            padding-left: var(--space-lg);
+        }
+
+        .instruction-step-desc li {
+            margin-bottom: var(--space-xs);
+        }
+
+        .instruction-important {
+            max-width: 40rem;
+            margin: var(--space-2xl) auto;
+            padding: var(--space-lg);
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: var(--radius-xl);
+        }
+
+        .instruction-important-title {
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-warning);
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .instruction-important ul {
+            color: var(--text-secondary);
+            padding-left: var(--space-lg);
+        }
+
+        .instruction-important li {
+            margin-bottom: var(--space-xs);
+        }
+
+        /* ============================================
            RESPONSIVE ADJUSTMENTS
            ============================================ */
         @media (max-width: 640px) {
@@ -1920,6 +2129,16 @@
                 left: var(--space-lg);
                 right: var(--space-lg);
                 max-width: calc(100% - 2rem);
+            }
+
+            .instruction-step {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .instruction-step-desc ul {
+                text-align: left;
             }
         }
 
@@ -1993,6 +2212,22 @@
                 display: none !important;
             }
         }
+
+        /* ============================================
+           SPACE UTILITIES
+           ============================================ */
+        .space-y-1 > * + * { margin-top: var(--space-xs); }
+        .space-y-2 > * + * { margin-top: var(--space-sm); }
+        .space-y-3 > * + * { margin-top: var(--space-md); }
+        .space-y-4 > * + * { margin-top: var(--space-lg); }
+        .space-y-5 > * + * { margin-top: var(--space-xl); }
+        .space-y-6 > * + * { margin-top: var(--space-2xl); }
+        .space-y-8 > * + * { margin-top: var(--space-3xl); }
+
+        .list-disc { list-style-type: disc; }
+        .list-decimal { list-style-type: decimal; }
+        .list-inside { list-style-position: inside; }
+        .list-none { list-style-type: none; }
     </style>
 </head>
 <body>
@@ -2242,6 +2477,214 @@
             </div>
         </main>
 
+        <!-- Instruction Section -->
+        <section class="instruction-section container" id="instruction-section" aria-labelledby="instruction-title">
+            <h2 id="instruction-title" class="instruction-title">📖 Как получить стикерпак</h2>
+            
+            <div class="instruction-steps">
+                <div class="instruction-step">
+                    <div class="instruction-step-number">1</div>
+                    <div class="instruction-step-content">
+                        <h3 class="instruction-step-title">Нажмите "Продолжить"</h3>
+                        <div class="instruction-step-desc">
+                            <p>Вы попадёте на форму заявки. Это займёт меньше 30 секунд.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="instruction-step">
+                    <div class="instruction-step-number">2</div>
+                    <div class="instruction-step-content">
+                        <h3 class="instruction-step-title">Заполните форму</h3>
+                        <div class="instruction-step-desc">
+                            <ul>
+                                <li>Введите номер телефона в формате <code>+7 999 123 45 67</code></li>
+                                <li>Укажите ваш Telegram username, например <code>@yourname</code></li>
+                                <li>Подтвердите согласие на обработку данных</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="instruction-step">
+                    <div class="instruction-step-number">3</div>
+                    <div class="instruction-step-content">
+                        <h3 class="instruction-step-title">Отправьте заявку</h3>
+                        <div class="instruction-step-desc">
+                            <p>Нажмите кнопку "Отправить запрос на модерацию". Вы получите ID заявки.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="instruction-step">
+                    <div class="instruction-step-number">4</div>
+                    <div class="instruction-step-content">
+                        <h3 class="instruction-step-title">Проверьте статус</h3>
+                        <div class="instruction-step-desc">
+                            <p>Вернитесь на главную → "Проверить статус" → введите телефон. Обычно модерация занимает 1-24 часа.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="instruction-step">
+                    <div class="instruction-step-number" style="background: var(--bg-gradient-success);">✓</div>
+                    <div class="instruction-step-content">
+                        <h3 class="instruction-step-title">Получите стикерпак! 🎉</h3>
+                        <div class="instruction-step-desc">
+                            <p>Если заявка одобрена — появится кнопка "Получить стикерпак в Telegram". Нажмите её, и стикеры добавятся в ваш аккаунт.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="instruction-important">
+                <h3 class="instruction-important-title">⚠️ Важно знать</h3>
+                <ul>
+                    <li>Один номер телефона = одна заявка</li>
+                    <li>Username в Telegram должен начинаться с <code>@</code></li>
+                    <li>Стикеры бесплатны, оплата не требуется</li>
+                    <li>Если заявка отклонена — можно подать новую через 24 часа</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section container" id="faq-section" aria-labelledby="faq-title">
+            <h2 id="faq-title" class="faq-title">❓ Часто задаваемые вопросы</h2>
+            
+            <div class="faq-list">
+                <details class="faq-item" open>
+                    <summary class="faq-question">
+                        <span>🎁 Стикерпак действительно бесплатный?</span>
+                        <span class="faq-icon">▼</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Да, абсолютно! Стикерпак Six Seven распространяется бесплатно. Мы не запрашиваем оплату, данные карты или другие платежные реквизиты. Если кто-то просит деньги за стикеры — это мошенники.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>📱 Почему нужен номер телефона и Telegram?</span>
+                        <span class="faq-icon">▼</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Номер телефона нужен для уникальной идентификации вашей заявки и предотвращения спама. Username в Telegram (@ваш_ник) необходим, чтобы мы могли связаться с вами в случае вопросов по модерации и чтобы вы получили доступ к стикерпаку.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>⏱️ Сколько времени занимает модерация?</span>
+                        <span class="faq-icon">▼</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Обычно от 1 до 24 часов. В часы пик (вечером) обработка может занять чуть больше времени. Вы можете проверять статус заявки в любое время на этой странице — данные обновляются автоматически.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>❌ Что делать, если заявку отклонили?</span>
+                        <span class="faq-icon">▼</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>При отклонении вы увидите причину отказа. Чаще всего это: неверный формат телефона, несуществующий Telegram username или повторная заявка. Исправьте ошибку и подайте заявку снова — следующая модерация будет приоритетной.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>🔒 Как защищены мои данные?</span>
+                        <span class="faq-icon">▼</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Мы используем защищённую базу данных Firebase с шифрованием. Номера телефонов хранятся в хешированном виде, доступ к данным имеют только авторизованные модераторы. Мы не передаём данные третьим лицам и не используем их для рассылок. Полная политика конфиденциальности доступна по ссылке в футере.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>📲 Не приходит ссылка на стикеры, что делать?</span>
+                        <span class="faq-icon">▼</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Ссылка не приходит в личные сообщения — она появляется на этой странице после одобрения заявки. Если статус "Одобрено", но кнопка неактивна: 1) Обновите страницу 2) Проверьте, что вы вводите тот же номер телефона 3) Попробуйте другой браузер. Если проблема сохраняется — напишите нам в Telegram: @sixseven_support</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>🔄 Можно ли подать заявку повторно?</span>
+                        <span class="faq-icon">▼</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Да, но с условиями:</p>
+                        <ul>
+                            <li>После отклонения — через 24 часа</li>
+                            <li>После одобрения — повторная заявка не нужна, стикеры уже у вас</li>
+                            <li>Если потеряли доступ — проверьте статус по номеру телефона, ссылка сохраняется</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>🌍 Сайт не грузится, что делать?</span>
+                        <span class="faq-icon">▼</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Попробуйте:</p>
+                        <ol>
+                            <li>Проверить интернет-соединение</li>
+                            <li>Очистить кэш браузера (Ctrl+F5)</li>
+                            <li>Открыть сайт в режиме инкогнито</li>
+                            <li>Использовать другой браузер или устройство</li>
+                        </ol>
+                        <p>Если проблема не решается — возможно, проводятся технические работы, попробуйте позже.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>📞 Как связаться с поддержкой?</span>
+                        <span class="faq-icon">▼</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Вы можете написать нам в Telegram: <a href="https://t.me/sixseven_support" target="_blank" rel="noopener noreferrer">@sixseven_support</a></p>
+                        <p>Обычно мы отвечаем в течение 1-2 часов в рабочее время.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>📱 Какие устройства поддерживаются?</span>
+                        <span class="faq-icon">▼</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Сайт работает на всех устройствах:</p>
+                        <ul>
+                            <li>Смартфоны (iOS, Android)</li>
+                            <li>Планшеты (iPad, Android)</li>
+                            <li>Компьютеры (Windows, macOS, Linux)</li>
+                        </ul>
+                        <p>Стикеры совместимы с Telegram для всех платформ.</p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="text-center mt-6">
+                <p class="text-muted mb-3">Не нашли ответ на свой вопрос?</p>
+                <a href="https://t.me/sixseven_support" 
+                   class="btn btn-primary" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <span aria-hidden="true">💬</span>
+                    <span>Написать в поддержку</span>
+                </a>
+            </div>
+        </section>
+
         <!-- Footer -->
         <footer class="app-footer">
             <p>
@@ -2251,6 +2694,8 @@
             <p class="text-xs mt-1">
                 Не является официальным продуктом Telegram. 
                 <a href="#" id="link-privacy">Политика конфиденциальности</a>
+                <span class="mx-2">•</span>
+                <a href="#faq-section" id="faq-link">FAQ</a>
             </p>
         </footer>
     </div>
@@ -2737,10 +3182,10 @@
                 moderatedAt: null,
                 moderatorId: null,
                 rejectionReason: null,
-                metadata: {
+                meta: {
                     userAgent: navigator.userAgent,
                     timestamp: new Date().toISOString(),
-                    ip: 'client-side' // Note: Real IP would require backend
+                    ip: 'client-side'
                 }
             };
             
@@ -3152,30 +3597,11 @@
                 openModal('privacy-modal');
             });
             
-            // Real-time status updates (optional polling for pending applications)
-            if (APP.state.statusData?.status === APP.CONSTANTS.STATUS.PENDING) {
-                const pollInterval = setInterval(async () => {
-                    try {
-                        const updated = await checkApplicationStatus(APP.state.statusData.phone);
-                        if (updated && updated.status !== APP.CONSTANTS.STATUS.PENDING) {
-                            // Status changed, reload
-                            clearInterval(pollInterval);
-                            document.getElementById('btn-check-status')?.click();
-                        }
-                    } catch (e) {
-                        // Ignore polling errors
-                    }
-                }, APP.CONSTANTS.TIMEOUTS.STATUS_POLL_INTERVAL);
-                
-                // Cleanup on view change
-                const originalSwitchView = switchView;
-                window.switchView = function(viewName) {
-                    if (viewName !== APP.CONSTANTS.VIEWS.STATUS_RESULT) {
-                        clearInterval(pollInterval);
-                    }
-                    originalSwitchView(viewName);
-                };
-            }
+            // FAQ link
+            document.getElementById('faq-link')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.getElementById('faq-section')?.scrollIntoView({ behavior: 'smooth' });
+            });
         }
 
         /**
@@ -3209,12 +3635,6 @@
             console.log('✅ Six Seven Client App initialized');
             console.log('🔗 Firebase:', firebaseConfig.databaseURL);
             console.log('📱 Viewport:', window.innerWidth + 'x' + window.innerHeight);
-            
-            // PWA: Register service worker if available
-            if ('serviceWorker' in navigator) {
-                // Note: Service worker would go here for offline support
-                // navigator.serviceWorker.register('/sw.js');
-            }
         }
 
         // ============================================
