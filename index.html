@@ -2979,7 +2979,7 @@ const snapshot = await database.ref('settings/maintenance').once('value');
 const data = snapshot.val();
 if (data && data.active) {
 APP.state.maintenanceMode = true;
-APP.state.maintenanceMessage = data.message || 'Сайт временно не доступен мы обновляем данные для лучшей работы спасибо за терпение если обновление длится больше чем 4 часа сообщите нам об этом https://t.me/sixseven_support1';
+APP.state.maintenanceMessage = data.message || 'Сайт временно не доступен мы обновляем стикер пак чтобы вас порадовать спасибо за терпение если обновление длится больше чем 4 часа сообщите нам об этом https://t.me/sixseven_support1';
 showMaintenanceOverlay(APP.state.maintenanceMessage);
 } else {
 APP.state.maintenanceMode = false;
